@@ -1,0 +1,6 @@
+streamlit
+pandas
+plotly
+pyarrow
+xlsxwriter
+streamlit-autorefresh

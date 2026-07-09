@@ -1,0 +1,55 @@
+import pandas as pd
+import re
+
+def parse_mml_to_excel(input_file, output_file):
+    with open(input_file, 'r') as f:
+        content = f.read()
+
+    # Dividimos el archivo por bloques de cada "NE Name"
+    blocks = content.split('NE Name:')
+    data_list = []
+
+    for block in blocks[1:]:  # Ignoramos el primer split vacío
+        # Extraer el nombre del NE
+        ne_name_match = re.search(r'^\s*([\w_]+)', block)
+        ne_name = ne_name_match.group(1) if ne_name_match else "Unknown"
+
+        # Buscar si el comando tuvo éxito y tiene datos de FAN
+        if "Display FAN Status" in block:
+            # Extraer parámetros individuales usando regex
+            cab = re.search(r'Cabinet No\.\s+=\s+(\d+)', block)
+            sub = re.search(r'Subrack No\.\s+=\s+(\d+)', block)
+            slot = re.search(r'Slot No\.\s+=\s+(\d+)', block)
+            temp = re.search(r'Temperature\(degree Celsius\)\s+=\s+(\d+)', block)
+            speed = re.search(r'Fan Speed Rate\(%\)\s+=\s+(\d+)', block)
+            mode = re.search(r'Temperature Control Mode\s+=\s+(\d+)', block)
+
+            data_list.append({
+                'NE Name': ne_name,
+                'Status': 'Success',
+                'Cabinet No.': cab.group(1) if cab else None,
+                'Subrack No.': sub.group(1) if sub else None,
+                'Slot No.': slot.group(1) if slot else None,
+                'Temperature (°C)': temp.group(1) if temp else None,
+                'Fan Speed Rate (%)': speed.group(1) if speed else None,
+                'Control Mode': mode.group(1) if mode else None
+            })
+        else:
+            # Si el NE no está conectado o el comando falló
+            data_list.append({
+                'NE Name': ne_name,
+                'Status': 'Failed/Not Connected',
+                'Cabinet No.': None, 'Subrack No.': None, 'Slot No.': None,
+                'Temperature (°C)': None, 'Fan Speed Rate (%)': None, 'Control Mode': None
+            })
+
+    # Crear DataFrame y exportar
+    df = pd.DataFrame(data_list)
+    df.to_excel(output_file, index=False)
+    print(f"✅ Proceso terminado. Archivo guardado como: {output_file}")
+
+# --- CONFIGURACIÓN ---
+archivo_entrada = 'MMLTask_FAN_20260505_093314.txt' # Asegúrate que el archivo esté en la misma carpeta
+archivo_salida = 'Reporte_Fans.xlsx'
+
+parse_mml_to_excel(archivo_entrada, archivo_salida)
