@@ -33,7 +33,7 @@ if not df_total.empty:
 
     if not criticos.empty:
         st.error(f"⚠️ ¡Atención! Se detectaron {len(criticos)} ventiladores en estado crítico.")
-        st.dataframe(criticos[["NE_Name", "Slot", "Fan_Speed", "Timestamp"]], use_container_width=True)
+        st.dataframe(criticos[["NE_Name", "Fan_Speed", "Timestamp"]], use_container_width=True)
     else:
         st.success("✅ Todos los ventiladores operan en niveles normales.")
 
