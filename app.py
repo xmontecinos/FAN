@@ -26,7 +26,7 @@ if not df_total.empty:
     # 1. Procesamiento de datos
     # NOTA: Asegúrate de que los nombres "NE_Name" y "Slot" coincidan 
     # exactamente con lo que imprime la línea de diagnóstico arriba.
-    ultimos_datos = df_total.sort_values("Timestamp").groupby(["NE_Name", "Slot"]).last().reset_index()
+    ultimos_datos = df_total.sort_values("Timestamp").groupby(["NE_Name"]).last().reset_index()
     
     # Filtro de críticos
     criticos = ultimos_datos[ultimos_datos['Fan_Speed'] >= UMBRAL_CRITICO_FAN]
