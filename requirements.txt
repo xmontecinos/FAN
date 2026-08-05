@@ -1,6 +1,7 @@
-streamlit
+streamlit==1.49.1
 pandas
 plotly
 pyarrow
+numpy
 xlsxwriter
 streamlit-autorefresh
