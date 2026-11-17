@@ -1,0 +1,140 @@
+=============================================================
+MML Command:
+	DSP FAN:SN=16;
+NE Name:
+	RHPUA0
+MML Command Report:
+	Invalid command,it is inexecutable.
+MML Command Result:
+	
+MML Command Return Code:
+	1
+=============================================================
+MML Command:
+	DSP FAN:SN=16;
+NE Name:
+	MAE_SAE_HUAWEI01
+MML Command Report:
+	NE is not connected.
+MML Command Result:
+	NE is not connected.
+MML Command Return Code:
+	1
+NE Name:
+	43_843
+MML Command Report:
+	+++    43_843        2026-11-12 01:00:11 DST
+O&M    #31277
+%%/*1879128998 MML Session=1794456011*/DSP FAN:SN=16;%%
+RETCODE = 0  Operation succeeded.
+
+Display FAN Status
+------------------
+                Cabinet No.  =  0
+                Subrack No.  =  0
+                   Slot No.  =  16
+Temperature(degree Celsius)  =  34
+          Fan Speed Rate(%)  =  25
+   Temperature Control Mode  =  0
+(Number of results = 1)
+
+
+---    END
+
+
+MML Command Result:
+	Operation succeeded.
+MML Command Return Code:
+	0
+NE Name:
+	53_416
+MML Command Report:
+	+++    53_416        2026-11-12 00:00:11
+O&M    #22649
+%%/*1879121422 MML Session=1794456011*/DSP FAN:SN=16;%%
+RETCODE = 0  Operation succeeded.
+
+Display FAN Status
+------------------
+                Cabinet No.  =  0
+                Subrack No.  =  0
+                   Slot No.  =  16
+Temperature(degree Celsius)  =  34
+          Fan Speed Rate(%)  =  31
+   Temperature Control Mode  =  0
+(Number of results = 1)
+
+
+---    END
+
+
+MML Command Result:
+	Operation succeeded.
+MML Command Return Code:
+	0
+=============================================================
+MML Command:
+	DSP FAN:SN=17;
+NE Name:
+	RHPUA0
+MML Command Report:
+	Invalid command,it is inexecutable.
+MML Command Result:
+	
+MML Command Return Code:
+	1
+=============================================================
+MML Command:
+	DSP FAN:SN=17;
+NE Name:
+	MAE_SAE_HUAWEI01
+MML Command Report:
+	NE is not connected.
+MML Command Result:
+	NE is not connected.
+MML Command Return Code:
+	1
+NE Name:
+	53_416
+MML Command Report:
+	+++    53_416        2026-11-12 00:00:11
+O&M    #22650
+%%/*1879121424 MML Session=1794456011*/DSP FAN:SN=17;%%
+RETCODE = 0  Operation succeeded.
+
+Display FAN Status
+------------------
+                Cabinet No.  =  0
+                Subrack No.  =  0
+                   Slot No.  =  17
+Temperature(degree Celsius)  =  26
+          Fan Speed Rate(%)  =  31
+   Temperature Control Mode  =  0
+(Number of results = 1)
+
+
+---    END
+
+
+MML Command Result:
+	Operation succeeded.
+MML Command Return Code:
+	0
+NE Name:
+	43_843
+MML Command Report:
+	+++    43_843        2026-11-12 01:00:11 DST
+O&M    #31278
+%%/*1879129001 MML Session=1794456011*/DSP FAN:SN=17;%%
+RETCODE = 0  Operation succeeded.
+
+No matching result is found
+
+
+---    END
+
+
+MML Command Result:
+	Operation succeeded.
+MML Command Return Code:
+	0
